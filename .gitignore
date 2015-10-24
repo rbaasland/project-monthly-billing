@@ -1,4 +1,5 @@
-/nbproject/private
+nbproject
 dist
 bower_components
 node_modules
+.sass-cache
