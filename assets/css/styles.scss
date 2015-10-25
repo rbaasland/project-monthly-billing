@@ -1,0 +1,96 @@
+// Global Styles
+body {
+    background-color: #fff;
+    font-family: 'Raleway', sans-serif;
+}
+.wrap {
+    @extend .container;
+}
+
+.hold {
+    @extend .make-row;
+}
+
+
+//Header
+header {
+    background-color: #369;
+    border-bottom: 15px solid complement(#369); 
+    .logo {
+        @include make-sm-column(4);
+        h1 {
+            color: #fff;
+            font-family: 'Roboto', sans-serif;
+        }
+    }
+    .links {
+        @include make-sm-column(8);
+        &::after {
+           clear: both; 
+        }
+        ul {
+            list-style-type: none;
+            margin-top: 25px;
+            text-align: right;
+            li {
+                display: inline-block;
+                a {
+                    color: #fff;
+                    font-weight: bold;
+                    padding: 5px 10px;
+                }
+            }
+        }
+    }
+}
+
+section {
+    min-height: 550px;
+}
+#login {
+    @include make-sm-column(3);
+    @include make-sm-column-offset(4.5);
+    border: 1px solid #ccc;
+    margin: 12.5% auto auto;
+    padding: 30px 15px;
+    .frm-row {
+        padding-bottom: 5px;
+        .frm-group {
+            label {
+                display: block;
+                margin-bottom: 0;
+            }
+            input[type="text"],
+            input[type="password"] {
+                margin-bottom: 5px;
+                width: 100%;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #369;
+    padding-top: 30px;
+    min-height: 200px;
+    p {
+        color: #fff;
+        text-align: center;
+    }
+}
+
+.slicknav_menu {
+    background-color: #369;
+    display:none;
+}
+
+@media (max-width: 767px) {
+    /* #menu is the original menu */
+    #menu {
+        display:none;
+    }
+
+    .slicknav_menu {
+        display:block;
+    }
+}

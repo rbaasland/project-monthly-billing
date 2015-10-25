@@ -1,0 +1,10 @@
+<?php
+
+class Users {
+    public static function validateUserLogin() {
+        return true;
+    }
+}
+
+?>
+
