@@ -1,0 +1,53 @@
+<?php
+
+/**
+ * Class login
+ */
+
+class Login
+{
+    /**
+     * @var array 
+     */
+    public $errors = array();
+    /**
+     * @var array 
+     */
+    public $messages = array();
+
+    public function __construct()
+    {
+        session_start();
+        if (isset($_GET["logout"])) {
+            $this->processLogout();
+        } elseif (isset($_POST["login"])) {
+            $this->processLogin();
+        }
+    }
+
+    private function processLogin()
+    {
+        if (isset($_POST["email"])) {
+            if (isset($_POST["password"])) {
+                $_SESSION["user_logged_in"] = 1;    
+            }
+        }
+        
+
+    }
+
+    public function processLogout()
+    {
+        // delete the session of the user
+        $_SESSION = array();
+        session_destroy();
+    }
+
+    public function isUserLoggedIn()
+    {
+        if (isset($_SESSION['user_logged_in']) && $_SESSION['user_logged_in'] == 1) {
+            return true;
+        }
+        return false;
+    }
+}

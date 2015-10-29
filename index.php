@@ -1,10 +1,13 @@
 <?php
     include "includes/application.php";
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-    $smarty->assign('title', 'Home | Project Bill Pay');
-    $smarty->display('templates/login.tpl');
+    
+    $_smarty->assign('title', 'Home | Project Bill Pay');
+    $_smarty->display('templates/header.tpl');
+
+    if (!$_login->isUserLoggedIn()) {
+        $_smarty->display('templates/login.tpl');
+    } else {
+        echo "Your Logged in!";
+    }
+    $_smarty->display('templates/footer.tpl');
 ?>
